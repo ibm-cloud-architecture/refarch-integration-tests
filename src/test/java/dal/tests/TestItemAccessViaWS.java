@@ -35,7 +35,7 @@ public class TestItemAccessViaWS {
 		System.out.println("Get all items via DAL WS");
 		List<Item> items;
 		try {
-			items = serv.items();
+			items = serv.getItems();
 			Assert.assertTrue(items.size()>10);
 			for (Item item : items){
 				   System.out.println(item.getName());	
@@ -80,7 +80,7 @@ public class TestItemAccessViaWS {
 			Assert.assertNotNull(itemOut.getName());
 			Assert.assertEquals("A test item", itemOut.getName());
 			System.out.print("...now delete it via DAL WS ");
-			String r=serv.deleteItem(itemOut.getId());
+			String r=serv.deleteItems(itemOut.getId());
 			Assert.assertNotNull(r);
 			Assert.assertEquals("Success",r);
 		} catch (DALException e) {

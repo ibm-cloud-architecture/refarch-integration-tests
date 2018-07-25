@@ -102,7 +102,7 @@ static DALService serv;
 		}
 		if (gotIt) {
 			try {
-				serv.deleteItem(itemOut.getId());
+				serv.deleteItems(itemOut.getId());
 			} catch (DALException e) {
 				e.printStackTrace();
 				Assert.fail();
@@ -137,7 +137,7 @@ static DALService serv;
 		}
 		if (gotIt) {
 			try {
-				serv.deleteItem(keepIdToDelete);
+				serv.deleteItems(keepIdToDelete);
 			} catch (DALException e) {
 				e.printStackTrace();
 				Assert.fail();

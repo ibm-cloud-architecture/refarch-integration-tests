@@ -26,200 +26,15 @@ public interface DALService {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns inventory.ws.Inventory
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateInventoryEntry", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateInventoryEntry")
-    @ResponseWrapper(localName = "updateInventoryEntryResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateInventoryEntryResponse")
-    public Inventory updateInventoryEntry(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Inventory arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
      * @return
      *     returns java.util.List<inventory.ws.Item>
      * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "items", targetNamespace = "http://ws.inventory/", className = "inventory.ws.Items")
-    @ResponseWrapper(localName = "itemsResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemsResponse")
-    public List<Item> items()
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg3
-     * @param arg2
-     * @param arg4
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns inventory.ws.Inventory
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "provisionItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ProvisionItem")
-    @ResponseWrapper(localName = "provisionItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ProvisionItemResponse")
-    public Inventory provisionItem(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Item arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        Supplier arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2,
-        @WebParam(name = "arg3", targetNamespace = "")
-        int arg3,
-        @WebParam(name = "arg4", targetNamespace = "")
-        double arg4)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns inventory.ws.Inventory
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getInventoryForSiteAndItemId", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryForSiteAndItemId")
-    @ResponseWrapper(localName = "getInventoryForSiteAndItemIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryForSiteAndItemIdResponse")
-    public Inventory getInventoryForSiteAndItemId(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns java.lang.String
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.DeleteItem")
-    @ResponseWrapper(localName = "deleteItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.DeleteItemResponse")
-    public String deleteItem(
-        @WebParam(name = "id", targetNamespace = "")
-        long id)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<inventory.ws.Item>
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getItemsPerSite", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemsPerSite")
-    @ResponseWrapper(localName = "getItemsPerSiteResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemsPerSiteResponse")
-    public List<Item> getItemsPerSite(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns inventory.ws.Inventory
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getInventoryById", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryById")
-    @ResponseWrapper(localName = "getInventoryByIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryByIdResponse")
-    public Inventory getInventoryById(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<inventory.ws.Inventory>
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getInventoryPerSite", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryPerSite")
-    @ResponseWrapper(localName = "getInventoryPerSiteResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryPerSiteResponse")
-    public List<Inventory> getInventoryPerSite(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<inventory.ws.Supplier>
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getSuppliersOfItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetSuppliersOfItem")
-    @ResponseWrapper(localName = "getSuppliersOfItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetSuppliersOfItemResponse")
-    public List<Supplier> getSuppliersOfItem(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Long arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns inventory.ws.Supplier
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "supplierById", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SupplierById")
-    @ResponseWrapper(localName = "supplierByIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SupplierByIdResponse")
-    public Supplier supplierById(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns inventory.ws.Item
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateItem")
-    @ResponseWrapper(localName = "updateItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateItemResponse")
-    public Item updateItem(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Item arg0)
+    @RequestWrapper(localName = "getItems", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItems")
+    @ResponseWrapper(localName = "getItemsResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemsResponse")
+    public List<Item> getItems()
         throws DALException
     ;
 
@@ -237,71 +52,6 @@ public interface DALService {
     public String deleteSupplier(
         @WebParam(name = "arg0", targetNamespace = "")
         long arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns int
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getItemStock", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemStock")
-    @ResponseWrapper(localName = "getItemStockResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemStockResponse")
-    public int getItemStock(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Long arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns inventory.ws.Item
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "newItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.NewItem")
-    @ResponseWrapper(localName = "newItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.NewItemResponse")
-    public Item newItem(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Item arg0)
-        throws DALException
-    ;
-
-    /**
-     * 
-     * @param name
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHello", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SayHello")
-    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SayHelloResponse")
-    public String sayHello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns inventory.ws.Item
-     * @throws DALException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "itemById", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemById")
-    @ResponseWrapper(localName = "itemByIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByIdResponse")
-    public Item itemById(
-        @WebParam(name = "id", targetNamespace = "")
-        long id)
         throws DALException
     ;
 
@@ -350,18 +100,49 @@ public interface DALService {
 
     /**
      * 
-     * @param arg0
+     * @param id
      * @return
-     *     returns java.util.List<inventory.ws.Inventory>
+     *     returns inventory.ws.Item
      * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getInventoryPerSupplier", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryPerSupplier")
-    @ResponseWrapper(localName = "getInventoryPerSupplierResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryPerSupplierResponse")
-    public List<Inventory> getInventoryPerSupplier(
+    @RequestWrapper(localName = "itemById", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemById")
+    @ResponseWrapper(localName = "itemByIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByIdResponse")
+    public Item itemById(
+        @WebParam(name = "id", targetNamespace = "")
+        long id)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns inventory.ws.Supplier
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateSupplier", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateSupplier")
+    @ResponseWrapper(localName = "updateSupplierResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateSupplierResponse")
+    public Supplier updateSupplier(
         @WebParam(name = "arg0", targetNamespace = "")
-        Long arg0)
+        Supplier arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<inventory.ws.Supplier>
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "suppliers", targetNamespace = "http://ws.inventory/", className = "inventory.ws.Suppliers")
+    @ResponseWrapper(localName = "suppliersResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SuppliersResponse")
+    public List<Supplier> suppliers()
         throws DALException
     ;
 
@@ -396,18 +177,35 @@ public interface DALService {
 
     /**
      * 
-     * @param name
+     * @param arg0
+     * @return
+     *     returns java.util.List<inventory.ws.Inventory>
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getInventoryPerSupplier", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryPerSupplier")
+    @ResponseWrapper(localName = "getInventoryPerSupplierResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryPerSupplierResponse")
+    public List<Inventory> getInventoryPerSupplier(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Long arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param arg0
      * @return
      *     returns inventory.ws.Item
      * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "itemByName", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByName")
-    @ResponseWrapper(localName = "itemByNameResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByNameResponse")
-    public Item itemByName(
-        @WebParam(name = "name", targetNamespace = "")
-        String name)
+    @RequestWrapper(localName = "newItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.NewItem")
+    @ResponseWrapper(localName = "newItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.NewItemResponse")
+    public Item newItem(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Item arg0)
         throws DALException
     ;
 
@@ -415,16 +213,16 @@ public interface DALService {
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<inventory.ws.Item>
+     *     returns inventory.ws.Inventory
      * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchByName", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SearchByName")
-    @ResponseWrapper(localName = "searchByNameResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SearchByNameResponse")
-    public List<Item> searchByName(
+    @RequestWrapper(localName = "getInventoryById", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryById")
+    @ResponseWrapper(localName = "getInventoryByIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryByIdResponse")
+    public Inventory getInventoryById(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0)
+        long arg0)
         throws DALException
     ;
 
@@ -432,16 +230,36 @@ public interface DALService {
      * 
      * @param arg0
      * @return
-     *     returns inventory.ws.Supplier
+     *     returns java.lang.String
      * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "supplierByName", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SupplierByName")
-    @ResponseWrapper(localName = "supplierByNameResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SupplierByNameResponse")
-    public Supplier supplierByName(
+    @RequestWrapper(localName = "deleteItems", targetNamespace = "http://ws.inventory/", className = "inventory.ws.DeleteItems")
+    @ResponseWrapper(localName = "deleteItemsResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.DeleteItemsResponse")
+    public String deleteItems(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0)
+        long arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns inventory.ws.Inventory
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getInventoryForSiteAndItemId", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryForSiteAndItemId")
+    @ResponseWrapper(localName = "getInventoryForSiteAndItemIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryForSiteAndItemIdResponse")
+    public Inventory getInventoryForSiteAndItemId(
+        @WebParam(name = "arg0", targetNamespace = "")
+        long arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1)
         throws DALException
     ;
 
@@ -449,16 +267,16 @@ public interface DALService {
      * 
      * @param arg0
      * @return
-     *     returns inventory.ws.Supplier
+     *     returns java.util.List<inventory.ws.Supplier>
      * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateSupplier", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateSupplier")
-    @ResponseWrapper(localName = "updateSupplierResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateSupplierResponse")
-    public Supplier updateSupplier(
+    @RequestWrapper(localName = "getSuppliersOfItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetSuppliersOfItem")
+    @ResponseWrapper(localName = "getSuppliersOfItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetSuppliersOfItemResponse")
+    public List<Supplier> getSuppliersOfItem(
         @WebParam(name = "arg0", targetNamespace = "")
-        Supplier arg0)
+        Long arg0)
         throws DALException
     ;
 
@@ -483,14 +301,14 @@ public interface DALService {
      * 
      * @param arg0
      * @return
-     *     returns java.lang.String
+     *     returns inventory.ws.Supplier
      * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteInventoryEntry", targetNamespace = "http://ws.inventory/", className = "inventory.ws.DeleteInventoryEntry")
-    @ResponseWrapper(localName = "deleteInventoryEntryResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.DeleteInventoryEntryResponse")
-    public String deleteInventoryEntry(
+    @RequestWrapper(localName = "supplierById", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SupplierById")
+    @ResponseWrapper(localName = "supplierByIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SupplierByIdResponse")
+    public Supplier supplierById(
         @WebParam(name = "arg0", targetNamespace = "")
         long arg0)
         throws DALException
@@ -498,15 +316,131 @@ public interface DALService {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<inventory.ws.Supplier>
+     *     returns inventory.ws.Supplier
      * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "suppliers", targetNamespace = "http://ws.inventory/", className = "inventory.ws.Suppliers")
-    @ResponseWrapper(localName = "suppliersResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SuppliersResponse")
-    public List<Supplier> suppliers()
+    @RequestWrapper(localName = "supplierByName", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SupplierByName")
+    @ResponseWrapper(localName = "supplierByNameResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SupplierByNameResponse")
+    public Supplier supplierByName(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns inventory.ws.Item
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateItem")
+    @ResponseWrapper(localName = "updateItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateItemResponse")
+    public Item updateItem(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Item arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns inventory.ws.Inventory
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateInventoryEntry", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateInventoryEntry")
+    @ResponseWrapper(localName = "updateInventoryEntryResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateInventoryEntryResponse")
+    public Inventory updateInventoryEntry(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Inventory arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns int
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getItemStock", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemStock")
+    @ResponseWrapper(localName = "getItemStockResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemStockResponse")
+    public int getItemStock(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Long arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<inventory.ws.Item>
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getItemsPerSite", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemsPerSite")
+    @ResponseWrapper(localName = "getItemsPerSiteResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetItemsPerSiteResponse")
+    public List<Item> getItemsPerSite(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<inventory.ws.Inventory>
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getInventoryPerSite", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryPerSite")
+    @ResponseWrapper(localName = "getInventoryPerSiteResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.GetInventoryPerSiteResponse")
+    public List<Inventory> getInventoryPerSite(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "sayHello", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SayHello")
+    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SayHelloResponse")
+    public String sayHello();
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns inventory.ws.Item
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "itemByName", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByName")
+    @ResponseWrapper(localName = "itemByNameResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByNameResponse")
+    public Item itemByName(
+        @WebParam(name = "name", targetNamespace = "")
+        String name)
         throws DALException
     ;
 
