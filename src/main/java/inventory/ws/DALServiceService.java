@@ -30,7 +30,7 @@ public class DALServiceService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://dal.brown.case/inventory/ws?wsdl");
+            url = new URL("http://brownappserver:9080/inventory/ws?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
